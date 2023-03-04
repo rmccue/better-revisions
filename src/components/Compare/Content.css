@@ -1,0 +1,68 @@
+.Compare-Content {
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 8px;
+}
+
+.Compare-Content__block {
+	display: flex;
+	justify-content: stretch;
+	align-items: stretch;
+	background: #fff;
+	padding: 0 0.5em;
+	margin: 0;
+	min-width: 0px;
+	overflow-x: hidden;
+	/* overflow: hidden; */
+	position: relative;
+}
+
+.Compare-Content__block--from {
+	grid-column: 1 / 2;
+}
+
+.Compare-Content__block--to {
+	grid-column: 2 / 3;
+}
+
+.Compare-Content__block:last-of-type {
+	padding-bottom: 1em;
+}
+
+/* .Compare-Content__inner {
+	padding: 1px 0.5em;
+	margin: 0;
+} */
+
+.Compare-Content__block::before {
+	content: " ";
+	/* display: block; */
+	/* position: absolute; */
+	inset: 0;
+	background: var( --compare-bg );
+	/* z-index: -9999; */
+}
+
+.Compare-Content__inner {
+	flex: 1;
+	max-width: 100%;
+	overflow: hidden;
+	background: var( --compare-bg );
+	padding: 2px 0.5em;
+}
+
+.Compare-Content__block--removed,
+.Compare-Content__block--from.Compare-Content__block--changed {
+	--compare-bg: #fcebeb;
+}
+
+.Compare-Content__block--inserted,
+.Compare-Content__block--to.Compare-Content__block--changed {
+	--compare-bg: #edf7ee;
+}
+
+.Compare-Content__block--from.Compare-Content__block--inserted,
+.Compare-Content__block--to.Compare-Content__block--removed {
+	--compare-bg: #eee;
+}

@@ -1,0 +1,32 @@
+.Header {
+	height: 60px;
+	background: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	max-width: 100vw;
+}
+
+.Header__toolbar-wrap {
+	display: flex;
+	flex-grow: 1;
+}
+
+.Header__toolbar {
+	display: inline-flex;
+	flex-grow: 1;
+	align-items: center;
+	border: none;
+}
+
+.Header__settings {
+	display: inline-flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-right: 4px;
+}
+@media ( min-width: 600px ) {
+	.Header__settings {
+		padding-right: 16px;
+	}
+}

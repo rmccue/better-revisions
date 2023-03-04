@@ -1,0 +1,86 @@
+.Sidebar {
+	min-width: 200px;
+	/* background: #f5f5f5; */
+}
+
+.RevisionList {
+	list-style: none;
+	margin: 1em 1em;
+	padding: 1em 0;
+
+	--indicator-diameter: 14px;
+	--indicator-outline-color: #ddd;
+	--indicator-outline-fill: #f9f9f9;
+	--indicator-line-color: #ddd;
+	--title-color: inherit;
+	--line-width: 2px;
+}
+
+.RevisionList__item {
+	/* background: red; */
+	position: relative;
+	margin: 0;
+	padding: 0 0 0 0.5em;
+	overflow: hidden;
+}
+
+.RevisionList__item:before {
+	content: " ";
+	display: block;
+	position: absolute;
+	left: calc( var( --indicator-diameter ) / 2 - var( --line-width ) / 2 );
+	top: 0;
+	bottom: 0;
+	border-left: var( --line-width ) solid var( --indicator-line-color );
+}
+
+.RevisionList__item:first-child:before {
+	top: 0.5em;
+}
+
+.RevisionList__item:last-child:before {
+	bottom: auto;
+	height: 0.5em;
+}
+
+.RevisionList__item--selected {
+	color: #1486b7;
+	--indicator-outline-color: #1486b7;
+	--indicator-outline-fill: #9bc9dd;
+}
+
+.RevisionList__item:hover {
+	color: #1486b7;
+	cursor: pointer;
+	--indicator-outline-color: #1486b7;
+	--indicator-outline-fill: #9bc9dd;
+}
+
+.RevisionList__item-indicator-container {
+	width: 10px;
+	width: var( --indicator-diameter );
+	/* width: 100px; */
+	height: auto;
+	position: absolute;
+	top: 0.5em;
+	left: 0;
+	/* background: rebeccapurple; */
+}
+
+.RevisionList__item-indicator {
+	stroke: var( --indicator-outline-color );
+	fill: var( --indicator-outline-fill );
+}
+
+.RevisionList__item-main {
+	margin: 0 0 1.5em 2em;
+}
+
+.RevisionList__item-title {
+	font-weight: bold;
+	margin: 3px 0 0.5em;
+}
+
+.RevisionList__item-byline {
+	margin: 0.5em 0;
+}

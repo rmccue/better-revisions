@@ -1,0 +1,13 @@
+.Compare {
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 8px;
+	padding: 1em;
+	box-sizing: border-box;
+}
+
+.Compare-Title {
+	background: #fff;
+	padding: 0 1em;
+}
